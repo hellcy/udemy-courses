@@ -1,4 +1,3 @@
-from os import write
 import sys
 
 
@@ -17,7 +16,7 @@ def wordCount():
 
 
 def readFile(file):
-    words = file.split(' ')
+    words = file.split()
     totalWords = 0
     uniqueWords = 0
 
