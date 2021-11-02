@@ -11,6 +11,7 @@ public class Publisher {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
+  private String name;
   private String address;
   private String city;
   private String state;
@@ -20,7 +21,8 @@ public class Publisher {
   @JoinColumn(name = "publisher_id")
   private Set<Book> books = new HashSet<>();
 
-  public Publisher(String address, String city, String state, String zip) {
+  public Publisher(String name, String address, String city, String state, String zip) {
+    this.name = name;
     this.address = address;
     this.city = city;
     this.state = state;
@@ -70,14 +72,24 @@ public class Publisher {
     this.zip = zip;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
   @Override
   public String toString() {
     return "Publisher{" +
             "id=" + id +
+            ", name='" + name + '\'' +
             ", address='" + address + '\'' +
             ", city='" + city + '\'' +
             ", state='" + state + '\'' +
             ", zip='" + zip + '\'' +
+            ", books=" + books +
             '}';
   }
 

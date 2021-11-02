@@ -33,6 +33,14 @@ public class Book {
     return publisher;
   }
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
   public void setPublisher(Publisher publisher) {
     this.publisher = publisher;
   }
@@ -67,7 +75,6 @@ public class Book {
             "id=" + id +
             ", title='" + title + '\'' +
             ", isbn='" + isbn + '\'' +
-            ", authors=" + authors +
             '}';
   }
 
